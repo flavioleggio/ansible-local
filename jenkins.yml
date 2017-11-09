@@ -4,4 +4,5 @@
   hosts: jenkins
   roles:
     - oracle-java
+    - docker
     - jenkins
