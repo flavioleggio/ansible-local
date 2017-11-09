@@ -1,4 +1,4 @@
 ---
 
-include: repository.yml
-include: packages.yml
+- include: repository.yml
+- include: packages.yml
