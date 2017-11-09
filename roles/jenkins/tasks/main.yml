@@ -1,0 +1,5 @@
+---
+
+- include: repository.yml
+- include: packages.yml
+- include: conf.yml

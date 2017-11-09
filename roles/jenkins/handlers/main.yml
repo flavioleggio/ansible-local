@@ -1,0 +1,11 @@
+---
+
+- name: reload jenkins
+  shell: systemctl daemon-reload
+  notify:
+    - restart jenkins
+
+- name: restart jenkins
+  service:
+    name: jenkins
+    state: restarted

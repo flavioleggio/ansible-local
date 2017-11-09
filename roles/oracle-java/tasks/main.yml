@@ -1,0 +1,36 @@
+---
+
+- name: add Ubuntu PPA key
+  shell: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+
+- name: add webupd8 launchpad apt repository
+  apt_repository:
+    repo: "{{ item }} http://ppa.launchpad.net/webupd8team/java/ubuntu trusty main"
+    update_cache: yes
+    state: present
+  with_items:
+    - deb
+    - deb-src
+
+- name: set license as accepted
+  shell: echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+#- name: set license as accepted
+#  debconf:
+#    name: oracle-java8-installer
+#    question: shared/accepted-oracle-license-v1-1
+#    value: true
+#    vtype: select
+
+- name: install Oracle Java8
+  apt:
+    name: oracle-java8-installer=8u151-1~webupd8~0
+    state: present
+    force: yes
+    cache_valid_time: 3600
+    update_cache: yes
+
+- name: set Java version as default
+  apt:
+    name: oracle-java8-set-default=8u151-1~webupd8~0
+    state: present
+    force: yes

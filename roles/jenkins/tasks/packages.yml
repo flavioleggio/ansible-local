@@ -1,0 +1,8 @@
+---
+
+- name: install Jenkins
+  apt:
+    name: jenkins
+    state: present
+  tags:
+    - packages

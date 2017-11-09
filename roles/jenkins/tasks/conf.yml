@@ -1,0 +1,16 @@
+---
+
+- name: copy configuration files
+  copy:
+    src: hosts/{{ inventory_hostname_short }}{{ item.path }}
+    dest: "{{ item.path }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: "{{ item.mode }}"
+  with_items:
+    - { path: /etc/default/jenkins, mode: "0644" }
+    - { path: /etc/init.d/jenkins, mode: "0755" }
+  notify:
+    - reload jenkins
+  tags:
+    - conf

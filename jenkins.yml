@@ -1,0 +1,7 @@
+---
+
+- name: install jenkins
+  hosts: jenkins
+  roles:
+    - oracle-java
+    - jenkins
