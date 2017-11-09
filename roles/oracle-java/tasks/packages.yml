@@ -1,0 +1,19 @@
+---
+
+- name: install Oracle Java8
+  apt:
+    name: oracle-java8-installer=8u151-1~webupd8~0
+    state: present
+    force: yes
+    cache_valid_time: 3600
+    update_cache: yes
+  tags:
+    - packages
+
+- name: set Java version as default
+  apt:
+    name: oracle-java8-set-default=8u151-1~webupd8~0
+    state: present
+    force: yes
+  tags:
+    - packages
