@@ -6,3 +6,10 @@
     state: present
   tags:
     - packages
+
+- name: install git
+  apt:
+    name: git
+    state: present
+  tags:
+    - packages
