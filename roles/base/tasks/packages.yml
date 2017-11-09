@@ -1,0 +1,16 @@
+---
+
+- name: install aptitude
+  apt:
+    name: aptitude
+    state: present
+    update_cache: yes
+  tags:
+    - packages
+
+- name: install base dependencies
+  apt:
+    name:
+      - curl
+      - apt-transport-https
+    state: present

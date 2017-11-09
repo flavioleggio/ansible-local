@@ -1,0 +1,39 @@
+---
+
+user: flavio
+
+files:
+  - path: /etc/hostname
+    owner: flavio
+    group: flavio
+    mode: "0644"
+
+  - path: /etc/hosts
+    owner: flavio
+    group: flavio
+    mode: "0644"
+
+  - path: /etc/network/interfaces
+    owner: flavio
+    group: flavio
+    mode: "0644"
+
+  - path: /etc/network/if-up.d/changedef
+    owner: flavio
+    group: flavio
+    mode: "0744"
+
+  - path: /etc/sudoers.d/flavio
+    owner: root
+    group: root
+    mode: "0644"
+
+  - path: /etc/ssh/flavio_banner
+    owner: root
+    group: root
+    mode: "0644"
+
+  - path: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: "0644"

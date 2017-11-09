@@ -1,0 +1,6 @@
+---
+
+- name: restart network
+  shell: |
+    ifdown enp0s3 && ifup enp0s3
+    ifdown enp0s8 && ifup enp0s8

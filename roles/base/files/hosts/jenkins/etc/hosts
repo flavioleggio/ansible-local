@@ -1,0 +1,18 @@
+127.0.0.1   localhost
+127.0.1.1   jenkins
+
+192.168.99.2    elasticsearch1
+192.168.99.3    elasticsearch2
+192.168.99.4    postgre
+192.168.99.5    logstash
+192.168.99.6    rabbitmq
+192.168.99.7    kibana
+192.168.99.8    evolution
+192.168.99.10   master
+192.168.99.11   worker1
+192.168.99.12   worker2
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

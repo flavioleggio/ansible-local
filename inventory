@@ -1,0 +1,35 @@
+# To bootstrap a new host, configure NAT as ssh TCP 127.0.0.1 2222 0.0.0.0 22
+# execute the base.yml playbook with an inventory entry formatted as follows
+# [group]
+# hostname
+# ansible_host=127.0.0.1 ansible_port=2222
+
+[elasticsearch]
+elasticsearch1
+elasticsearch2
+
+[logstash]
+logstash
+
+[kibana]
+kibana
+
+[rabbitmq]
+rabbitmq
+
+[postgres]
+postgre
+
+[jenkins]
+jenkins
+
+[kubernetes-masters]
+master
+
+[kubernetes-workers]
+worker1
+worker2
+
+[kubernetes:children]
+kubernetes-masters
+kubernetes-workers
