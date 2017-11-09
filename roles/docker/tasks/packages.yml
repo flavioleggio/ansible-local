@@ -1,0 +1,8 @@
+---
+
+- name: install docker-ce
+  apt:
+    pkg: docker-ce
+    update_cache: yes
+  tags:
+    - packages
