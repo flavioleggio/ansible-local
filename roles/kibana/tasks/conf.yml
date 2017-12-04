@@ -1,0 +1,11 @@
+---
+
+- name: copy configuration files
+  copy:
+    src: hosts/{{ inventory_hostname_short }}/etc/kibana/kibana.yml
+    dest: /etc/kibana/kibana.yml
+    owner: kibana
+    group: kibana
+    mode: 0644
+  notify:
+    - reload kibana

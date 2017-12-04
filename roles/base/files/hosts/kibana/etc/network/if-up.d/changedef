@@ -1,0 +1,2 @@
+#!/bin/bash
+/sbin/ip route change default via 10.0.2.2 dev enp0s3

@@ -1,0 +1,13 @@
+---
+
+- name: add elastic PGP key
+  apt_key:
+    url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+    id: D88E42B4
+    state: present
+
+- name: add elastic apt repository
+  apt_repository:
+    repo: deb https://artifacts.elastic.co/packages/6.x/apt stable main
+    state: present
+    update_cache: yes

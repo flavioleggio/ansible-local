@@ -1,0 +1,12 @@
+---
+
+- include: repository.yml
+  tags: repository
+
+- include: packages.yml
+  tags:
+    - repository
+    - packages
+
+- include: conf.yml
+  tags: conf

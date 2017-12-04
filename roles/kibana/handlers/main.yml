@@ -1,0 +1,11 @@
+---
+
+- name: reload kibana
+  shell: systemctl daemon-reload
+  notify:
+    - restart kibana
+
+- name: restart kibana
+  service:
+    name: kibana
+    state: restarted

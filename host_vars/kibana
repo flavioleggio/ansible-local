@@ -1,0 +1,26 @@
+---
+
+files:
+  - path: /etc/hostname
+    owner: kibana
+    group: kibana
+    state: present
+    mode: "0644"
+
+  - path: /etc/hosts
+    owner: kibana
+    group: kibana
+    state: present
+    mode: "0644"
+
+  - path: /etc/network/interfaces
+    owner: kibana
+    group: kibana
+    state: present
+    mode: "0644"
+
+  - path: /etc/network/if-up.d/changedef
+    owner: kibana
+    group: kibana
+    state: present
+    mode: "0744"
