@@ -1,5 +1,15 @@
 ---
 
+- name: copy GitLab ca cert
+  copy:
+    src: hosts/{{ inventory_hostname_short }}/etc/ssl/gitlab-ext.intra.drop-pay.io.ca.crt
+    dest: /etc/ssl/gitlab-ext.intra.drop-pay.io.ca.crt
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0644
+  tags:
+    - conf
+
 - name: copy configuration files
   copy:
     src: hosts/{{ inventory_hostname_short }}{{ item.path }}
