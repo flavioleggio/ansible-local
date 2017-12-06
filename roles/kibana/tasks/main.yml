@@ -8,5 +8,8 @@
     - repository
     - packages
 
+- include: setup.yml
+  tags: setup
+
 - include: conf.yml
   tags: conf

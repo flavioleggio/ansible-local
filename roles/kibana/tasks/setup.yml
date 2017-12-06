@@ -1,0 +1,14 @@
+---
+
+- name: create self-signed certificate
+  shell: >
+    openssl req
+    -x509
+    -nodes
+    -days 3650
+    -newkey rsa:2048
+    -subj "/C=IT/ST=Italy/L=Milan/O=A-Tono/OU=DropPay/CN={{ inventory_hostname }}"
+    -keyout /etc/kibana/certs/{{ inventory_hostname }}.key
+    -out /etc/kibana/certs/{{ inventory_hostname }}.crt
+  args:
+    creates: /etc/kibana/certs/{{ inventory_hostname }}.crt
